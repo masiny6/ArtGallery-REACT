@@ -2,9 +2,9 @@ import React, { Fragment } from "react"
 import { Route } from "react-router-dom"
 import { Catalog } from "./pages/catalog/Catalog"
 import { Home } from "./pages/home/Home"
+import { ProductCard } from "./pages/productCard/ProductCard"
 import "./scss/app.scss"
 
-// import {Layout} from './components/layout/Layout'
 
 export default class App extends React.Component {
     constructor(props) {
@@ -18,7 +18,8 @@ export default class App extends React.Component {
         return(
             <Fragment>
                 <Route path="/" exact component={Home}/>
-                <Route path="/catalog" exact component={Catalog}/>
+                <Route path="/Catalog" exact component={Catalog}/>
+                <Route path="/ProductCard" exact component={ProductCard}/>
             </Fragment>
         )
     }

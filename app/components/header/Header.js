@@ -19,7 +19,7 @@ export const Header = () => {
     </div>
     <nav className="main-navigation main-navigation-js">
       <ul className="navigation">
-        <li className="navigation__elem"><NavLink className="navigation__link" to="/catalog">Каталог</NavLink></li>
+        <li className="navigation__elem"><NavLink className="navigation__link" to="/Catalog">Каталог</NavLink></li>
         <li className="navigation__elem"><a className="navigation__link" href="#">Художники</a></li>
         <li className="navigation__elem"><a className="navigation__link" href="#">Блог</a></li>
         <li className="navigation__elem"><a className="navigation__link still" href="#">Ещё</a></li>
