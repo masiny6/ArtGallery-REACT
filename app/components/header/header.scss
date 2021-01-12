@@ -66,7 +66,10 @@
         transition: 0.3s;
     }
 }
-
+.still-background-js {
+    background-color: black;
+    transition: 0.3s;
+}
 .still::after {
     content: "";
     position: absolute;
@@ -74,7 +77,7 @@
     height: 10px;
     right: 10px;
     top: 5px;
-    background-image: url(../../assets/images/V-white.svg);
+    background-image: url(../../assets/images/V-white.png);
     background-repeat: no-repeat;
 }
 .still::before {
@@ -175,7 +178,7 @@
     top: -3px;
     cursor: pointer;
 }
-.main-no-authorization .personal-account__photo {
+.main-authorization .personal-account__photo {
     background-image: url(../../assets/images/background-login.jpg);
     border-radius: 50%;
     width: 35px;
@@ -190,8 +193,11 @@
     top: 0px;
 }
 //Тестирование
-.main-no-authorization .personal-account {
+.main-authorization .personal-account {
     margin-right: 50px;
+}
+.main .personal-account__name {
+    display: none;
 }
 .personal-account__name {
     font-family: "Proxima-Nova-Rg", sans-serif;
@@ -884,7 +890,7 @@
         margin-right: 20px;
         left: 0px;
     }
-    .main-no-authorization .personal-account {
+    .main-authorization .personal-account {
         margin-right: 20px;
     }
 }

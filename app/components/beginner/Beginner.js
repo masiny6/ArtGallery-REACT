@@ -1,16 +1,29 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./beginner.scss"
 import expertPhoto from "../../assets/images/expert-photo.jpg"
 import backgroundVideo from "../../assets/images/background-video.jpg"
+import { RateContext } from "../../context/RateContext"
 
 export const Beginner = () => {
+
+    const {state, popupShowHandler, popupHideHandler} = useContext(RateContext)
+
+    //Открыти и закрытие попапа с видео
+    const popupVideoHide = ["beginner-popup", "beginner-popup-js"]
+    const videoAutoplay = ["https://www.youtube.com/embed/R8Yd-M9vfI0"]
+  
+    if(state.showPopup && state.valuePopup === "popupVideo") {
+        popupVideoHide.splice(1,1)
+        videoAutoplay.push("?autoplay=1")
+    }
+
     return(
         <div className="beginner-section">
             <div className="section-header">
                 <h2 className="section-title">Не знаете с чего начать?</h2>
             </div>
             <div className="centering">
-                <div className="beginner-video beginner-video-js">
+                <div className="beginner-video beginner-video-js" onClick={() => popupShowHandler("popupVideo")}>
                     <img className="beginner-video__preview" src={backgroundVideo} alt=""/>
                     <p className="beginner-video__text">Видеобзор нашего ресурса возможности для пользователя</p>
                 </div>
@@ -20,10 +33,10 @@ export const Beginner = () => {
                     <a className="beginner-expert__link" href="#"><p className="beginner-expert__text">Обзор нашего экспетра Элеоноры Рубинштейн-Загорской</p></a>
                 </div>
             </div>
-            <div className="beginner-popup beginner-popup-js">
+            <div className={popupVideoHide.join(" ")}>
                 <div className="beginner-popup__inner">
-                    <a className="beginner-popup__exit" href="#"></a>
-                    <iframe className="beginner-popup__video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    <span className="beginner-popup__exit" href="#" onClick={popupHideHandler}></span>
+                    <iframe className="beginner-popup__video" src={videoAutoplay.join("")} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 </div>
             </div>
         </div>

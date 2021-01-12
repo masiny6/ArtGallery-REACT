@@ -4,6 +4,7 @@ import photoWorks1 from "../../assets/images/photo-works-1.jpg"
 import photoWorks2 from "../../assets/images/photo-works-2.jpg"
 import photoWorks3 from "../../assets/images/photo-works-3.jpg"
 import photoWorks7 from "../../assets/images/photo-works-7.jpg"
+import { NavLink } from "react-router-dom"
 
 export const WorksCard = () => {
     return(
@@ -25,8 +26,8 @@ export const WorksCard = () => {
                             </div>
                             <div className="description-work">
                                 <span className="attraction-new">Новинка</span>
-                                <h4 className="description-work__title"><a className="description-work__link" href="../product-card.html">Распоряжения о структуре
-                                        тут длинное название картины</a></h4>
+                                <h4 className="description-work__title"><NavLink className="description-work__link" to="/produc-card">Распоряжения о структуре
+                                        тут длинное название картины</NavLink></h4>
                                 <p className="description-work__author"><a className="description-work__link" href="#">Екатерина Александровна
                                         Преображенская</a></p>
                                 <p className="description-work__size">Картина, 80x60 см.</p>

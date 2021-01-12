@@ -50,7 +50,7 @@ export const Works = () => {
                     </div>
                     <div className="description-work">
                         <span className="attraction-new">Новинка</span>
-                        <h4 className="description-work__title"><NavLink className="description-work__link" to="/ProductCard">Распоряжения о структуре
+                        <h4 className="description-work__title"><NavLink className="description-work__link" to="/product-card">Распоряжения о структуре
                                 тут длинное название картины</NavLink></h4>
                         <p className="description-work__author"><a className="description-work__link" href="#">Екатерина Александровна
                                 Преображенская</a></p>

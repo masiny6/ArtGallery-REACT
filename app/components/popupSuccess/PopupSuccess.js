@@ -1,12 +1,23 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./popupSuccess.scss"
 import tickSuccess from "../../assets/images/tick-success.png"
+import { RateContext } from "../../context/RateContext"
 
 export const PopupSuccess = () => {
+
+
+    const {state, popupHideHandler, popupShowHandler} = useContext(RateContext)
+
+    const popupHide = ["popup-success", "js-popup-success", "js-popup-close-general"]
+
+    if(state.showPopup && state.valuePopup === "success") {
+        popupHide.splice(2,1)
+    }
+
     return(
-        <div className="popup-success js-popup-success js-popup-close-general">
+        <div className={popupHide.join(" ")}>
             <div className="popup-success__centering">
-                <span className="popup-success__close js-popup-general-close"></span>
+                <span className="popup-success__close js-popup-general-close" onClick={popupHideHandler}></span>
                 <div className="popup-header">
                     <span className="popup-header__title">Успех!</span>
                 </div>

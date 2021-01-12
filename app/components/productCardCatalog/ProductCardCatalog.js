@@ -10,10 +10,10 @@ export const ProductCardCatalog = () => {
         <div className="product-card">
             <div className="bread-crumb">
                 <div className="centering">
-                    <NavLink className="bread-crumb__link" to="/Catalog"><span
+                    <NavLink className="bread-crumb__link" to="/catalog"><span
                             className="bread-crumb__elem bread-crumb__back">Назад</span></NavLink>
                     <NavLink className="bread-crumb__link" to="/"><span className="bread-crumb__elem">Главная</span></NavLink>
-                    <NavLink className="bread-crumb__link" to="/Catalog"><span className="bread-crumb__elem">Каталог</span></NavLink>
+                    <NavLink className="bread-crumb__link" to="/catalog"><span className="bread-crumb__elem">Каталог</span></NavLink>
                     <span className="bread-crumb__elem bread-crumb__last">Название картины</span>
                 </div>
             </div>

@@ -1,12 +1,24 @@
-import React from "react"
+import React, { useContext } from "react"
+import { RateContext } from "../../context/RateContext"
 import "./popupRegistration.scss"
 
 export const PopupRegistration = () => {
+
+    const {state, popupHideHandler, popupShowHandler} = useContext(RateContext)
+
+    const popupHide = ["popup-registration", "js-popup-registration", "js-popup-close-general"]
+
+    if(state.showPopup && state.valuePopup === "registr") {
+        popupHide.splice(2,1)
+    }
+
+
+    
     return(
-        <div className="popup-registration js-popup-registration js-popup-close-general">
+        <div className={popupHide.join(" ")}>
             <div className="popup-registration__centering">
                 <form className="form-registration js-form-registration" action="#">
-                <span className="popup-registration__close js-popup-general-close"></span>
+                <span className="popup-registration__close js-popup-general-close" onClick={popupHideHandler}></span>
                 <div className="popup-header">
                     <div className="title-and-text">
                         <span className="popup-header__title">Регистрация</span>
@@ -15,11 +27,11 @@ export const PopupRegistration = () => {
                     </div>
                     <div className="no-account">
                         <span className="no-account__text">Уже зарегистрированы?</span>
-                        <span className="no-account__registr js-no-account__registr">Авторизоваться</span>
+                        <span className="no-account__registr js-no-account__registr" onClick={() => popupShowHandler("authorization")}>Авторизоваться</span>
                     </div>
                 </div>
                 <div className="artist-and-buyer">
-                    <label className="label-artist"><input className="input-artist input-general" type="radio" name="choise" checked/>Я
+                    <label className="label-artist"><input className="input-artist input-general" type="radio" name="choise" defaultChecked/>Я
                         художник</label>
                     <label className="label-buyer"><input className="input-buyer input-general" type="radio" name="choise"/>Я
                         покупатель</label>

@@ -16,7 +16,7 @@ export const HeaderWhite = () => {
         </div>
         <nav className="main-navigation main-navigation-white main-navigation-js">
           <ul className="navigation navigation-white">
-            <li className="navigation__elem"><NavLink className="navigation__link navigation__link-white" to="/Catalog">Каталог</NavLink></li>
+            <li className="navigation__elem"><NavLink className="navigation__link navigation__link-white" to="/catalog">Каталог</NavLink></li>
             <li className="navigation__elem"><a className="navigation__link navigation__link-white" href="#">Художники</a></li>
             <li className="navigation__elem"><a className="navigation__link navigation__link-white" href="#">Блог</a></li>
             <li className="navigation__elem"><a className="navigation__link navigation__link-white still still-white" href="#">Ещё</a></li>

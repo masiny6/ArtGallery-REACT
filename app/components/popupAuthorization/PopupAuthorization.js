@@ -1,16 +1,30 @@
-import React from "react"
+import React, { useContext } from "react"
+import { RateContext } from "../../context/RateContext"
 import "./popupAuthorization.scss"
 
+
+
+
 export const PopupAuthorization = () => {
+
+    const {state, popupHideHandler, popupShowHandler} = useContext(RateContext)
+
+    const popupHide = ["popup-authorization", "js-popup-authorization", "js-popup-close-general"]
+
+    if(state.showPopup && state.valuePopup === "authorization") {
+        popupHide.splice(2,1)
+    }
+
+    
     return(
-        <div className="popup-authorization js-popup-authorization js-popup-close-general">
+        <div className={popupHide.join(" ")}>
             <div className="popup-authorization__centering">
-                <span className="popup-authorization__close js-popup-general-close"></span>
+                <span className="popup-authorization__close js-popup-general-close" onClick={popupHideHandler}></span>
                 <div className="popup-header">
                     <span className="popup-header__title">Авторизация</span>
                     <div className="no-account">
                         <span className="no-account__text">Ещё нет аккаунта?</span>
-                        <span className="no-account__registr js-no-account__registr">Зарегистрироваться</span>
+                        <span className="no-account__registr js-no-account__registr" onClick={() => popupShowHandler("registr")}>Зарегистрироваться</span>
                     </div>
                 </div>
                 <div className="network-and-form">
@@ -79,7 +93,7 @@ export const PopupAuthorization = () => {
                         </form>
                         <div className="forgotten-password">
                             <span className="forgotten-password__text js-forgotten-password__text">Забыли пароль?</span>
-                            <span className="forgotten-password__button js-forgotten-password__button">Восстановить пароль</span>
+                            <span className="forgotten-password__button js-forgotten-password__button" onClick={() => popupShowHandler("recovery")}>Восстановить пароль</span>
                         </div>
                     </div>
                 </div>
